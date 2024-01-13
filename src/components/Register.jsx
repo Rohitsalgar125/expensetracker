@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
+import fetchData from "../helper";
 
 const Register = () => {
+  useEffect(()=>{
+    fetchData('https://exptrack-kziy.onrender.com/getalluser').then((data)=>{
+      console.log(data ,'data')
+    })
+  },[])
   return (
     <div className="w-screen h-screen flex flex-col justify-center content-center items-center bg-gradient-to-tr from-slate-50 to-slate-100">
       <div className="w-[300px] h-[400px] border bg-white border-none drop-shadow-2xl rounded-xl  flex flex-col items-center">

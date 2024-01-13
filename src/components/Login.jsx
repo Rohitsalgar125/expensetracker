@@ -1,6 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import { useLoginMutation } from "../hooks/login";
 
 const Login = () => {
+  const { mutate } = useLoginMutation();
+  const [loginData, setLogindata] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setLogindata({ ...loginData, [name]: value });
+  };
+
+  const onSubmit = () => {
+    mutate(loginData);
+  };
+
   return (
     <div className="w-screen h-screen flex flex-col justify-center content-center items-center bg-gradient-to-tr from-slate-50 to-slate-100">
       <div className="w-[300px] h-[300px] border bg-white border-none drop-shadow-2xl rounded-xl  flex flex-col items-center">
@@ -11,18 +28,23 @@ const Login = () => {
             type="text"
             name="email"
             className="border rounded border-rose-400"
+            onChange={handChange}
           />
         </div>
         <div className="flex flex-col justify-center mt-2">
           <label className=" font-sans font-semibold">Password :</label>
           <input
             type="text"
-            name="email"
+            name="password"
             className="border border-rose-400 rounded"
+            onChange={handChange}
           />
         </div>
         <div className="">
-          <button className="w-[185px] font-sans font-semibold border bg-rose-400 text-white rounded px-4 py-1 mt-5">
+          <button
+            className="w-[185px] font-sans font-semibold border bg-rose-400 text-white rounded px-4 py-1 mt-5"
+            onClick={() => onSubmit()}
+          >
             Login
           </button>
         </div>
