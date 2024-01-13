@@ -1,13 +1,17 @@
 import "./App.css";
-import Dashboard from "./components/Dashboard";
-import Sidebar from "./components/Sidebar";
+// import Login from "./components/Login";
+import Register from "./components/Register";
+// import Dashboard from "./components/Dashboard";
+// import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
     <div className=" w-full flex">
-      <Sidebar />
+      {/* <Sidebar /> */}
       <main className=" grow">
-        <Dashboard />
+        {/* <Dashboard /> */}
+        {/* <Login /> */}
+        <Register/>
       </main>
     </div>
   );

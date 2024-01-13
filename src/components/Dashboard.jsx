@@ -3,7 +3,7 @@ import React from "react";
 const Dashboard = () => {
   return (
     <div className=" flex flex-col space-y-4 px-14 py-12">
-      <h3>Dashboard</h3>
+      <h3 className=" font-semibold">Dashboard</h3>
       <div className=" flex space-x-8 ">
         <div className=" w-2/5 h-[100px] border rounded flex flex-col justify-center p-4  text-gray-600">
           <span>Hi Rohit</span>
@@ -15,7 +15,7 @@ const Dashboard = () => {
         </div>
       </div>
       <div className=" flex space-x-8 ">
-        <h2>Expenses Chart</h2>
+        <h2 className=" font-semibold">Expenses Chart</h2>
       </div>
 
       <div className=" flex space-x-8 ">
