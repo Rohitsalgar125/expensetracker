@@ -1,9 +1,9 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import "./App.css";
 import Login from "./components/Login";
-// import Register from "./components/Register";
-// import Dashboard from "./components/Dashboard";
-// import Sidebar from "./components/Sidebar";
+import Register from "./components/Register";
+import Dashboard from "./components/Dashboard";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -17,14 +17,13 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className=" w-full flex">
-        {/* <Sidebar /> */}
-        <main className=" grow">
-          {/* <Dashboard /> */}
-          <Login />
-          {/* <Register /> */}
-        </main>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" exact Component={Login} />
+          <Route path="/register" exact Component={Register} />
+          <Route path="/dashboard" exact Component={Dashboard} />
+        </Routes>
+      </BrowserRouter>
     </QueryClientProvider>
   );
 }
