@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import fetchData from "../helper";
 import { useRegisterMutation } from "../hooks/hooks";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const { mutate } = useRegisterMutation();
@@ -24,7 +25,7 @@ const Register = () => {
   };
 
   const onSubmit = () => {
-    console.log(payload)
+    console.log(payload);
     mutate(payload);
   };
 
@@ -75,6 +76,14 @@ const Register = () => {
           >
             Register
           </button>
+        </div>
+        <div>
+          <span className=" font-sans px-2 py-2 text-xs">
+            Already have Account{" "}
+          </span>
+          <Link to={"/"} className="font-sans text-sm">
+            Login
+          </Link>
         </div>
       </div>
     </div>

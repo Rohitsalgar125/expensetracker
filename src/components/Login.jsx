@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLoginMutation } from "../hooks/hooks";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const { mutate } = useLoginMutation();
@@ -48,6 +49,11 @@ const Login = () => {
             Login
           </button>
         </div>
+          <div>
+            <span className=" font-sans px-2 py-2 text-xs">Don't have Account  </span>
+            <Link to={'/register'} className="font-sans text-sm">Register</Link>
+
+          </div>
       </div>
     </div>
   );
